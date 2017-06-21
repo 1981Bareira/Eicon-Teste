@@ -15,6 +15,22 @@ Conceder permissões ao usuario utilizando:
 GRANT SELECT, INSERT, DELETE, CREATE, ALTER, DROP ON *.* TO 'root'@'password';
 FLUSH PRIVILEGES;
 
+Criar a tabela Pedidos
+
+CREATE TABLE pedidos
+(
+   nr_controle bigint PRIMARY KEY NOT NULL,
+   dt_registro timestamp,
+   id_cli bigint,
+   nome_produto varchar(255),
+   qtde int,
+   vlr_produto decimal(19,2),
+   vlr_total decimal(19,2)
+)
+;
+CREATE UNIQUE INDEX PRIMARY ON pedidos(nr_controle)
+;
+
 
 para compilar e rodar a aplicação utilize
 
